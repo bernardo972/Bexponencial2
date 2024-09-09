@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento com Senha</title>
+</head>
+<body>
+    <h1>Insira a senha:</h1>
+    <form id="passwordForm">
+        <input type="password" id="passwordInput" placeholder="Digite a senha">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        const correctPassword = "Bexponencial"; // Defina sua senha correta aqui
+
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const enteredPassword = document.getElementById("passwordInput").value;
+
+            if (enteredPassword === correctPassword) {
+                // Redirecionar para o site desejado (por exemplo, https://www.example.com)
+                window.location.href = "site.html";
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>

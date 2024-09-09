@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tela inicial</title>
+</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Simples</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+      <div class="container">
+          <h1>Meu Site</h1>
+          <nav>
+              <ul>
+                  <li><a href="#">Início (Onde voçê esta)</a></li>
+                  <li><a href="#">Sobre (não tem)</a></li>
+                  <li><a href="#">Serviços (não tem)</a></li>
+                  <li><a href="#">Contato (não tem)</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+  <div class="container">
+</body>
+</html>
+<body>
+</body>
+</html>
+<img src="cv.jpg" alt="Descrição da imagem">
+<style>
+    img{
+        width: 125px;
+    }
+</style>
+<h1>Olá Bernardo tudo certo?</h1>
+<li><a href="Jogos.html" class="button">Jogos</a></li>
+<li><a href="https://www.invertexto.com/simbolos-para-copiar" class="button">simbolos para copiar</a></li>
+<li><a href="bloco de notas.html" class="button">trolagens com bloco de notas</a></li>
+<li><a href="https://www.Youtube.com" class="button">Youtube</a></li>
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #messages { margin-top: 20px; }
+    .message { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; position: relative; }
+    .delete-btn { position: absolute; right: 10px; top: 10px; cursor: pointer; color: red; }
+</style>
+</head>
+<body>
+<h1>Armazenar e Excluir Mensagens</h1>
+
+<form id="messageForm">
+    <label for="messageInput">Digite sua mensagem:</label><br>
+    <textarea id="messageInput" rows="4" cols="50"></textarea><br>
+    <button type="submit">Guardar Mensagem</button>
+</form>
+
+<div id="messages"></div>
+
+<script>
+    // Função para carregar as mensagens salvas
+    function loadMessages() {
+        const messagesContainer = document.getElementById('messages');
+        messagesContainer.innerHTML = ''; // Limpa o conteúdo existente
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.forEach((message, index) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = message;
+
+            const deleteBtn = document.createElement('span');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = 'Excluir';
+            deleteBtn.addEventListener('click', () => deleteMessage(index));
+            
+            messageDiv.appendChild(deleteBtn);
+            messagesContainer.appendChild(messageDiv);
+        });
+    }
+
+    // Função para guardar uma nova mensagem
+    function saveMessage(message) {
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.push(message);
+        localStorage.setItem('messages', JSON.stringify(messages));
+        loadMessages(); // Atualiza a lista de mensagens exibidas
+    }
+
+    // Função para excluir uma mensagem
+    function deleteMessage(index) {
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.splice(index, 1); // Remove a mensagem do array
+        localStorage.setItem('messages', JSON.stringify(messages));
+        loadMessages(); // Atualiza a lista de mensagens exibidas
+    }
+
+    // Manipulador de eventos para o formulário
+    document.getElementById('messageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const messageInput = document.getElementById('messageInput');
+        const newMessage = messageInput.value.trim();
+        if (newMessage) {
+            saveMessage(newMessage);
+            messageInput.value = ''; // Limpa o campo de entrada
+        }
+    });
+
+    // Carregar mensagens quando a página é carregada
+    window.onload = loadMessages;
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <link rel="stylesheet" href="main.css" />
+</head>
+</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </div>
+</footer>
